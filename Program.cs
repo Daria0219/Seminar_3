@@ -21,7 +21,7 @@ int N = int.Parse(Console.ReadLine());
 Palindrom(N);
 */
 
-// 2. программа, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве
+/* 2. программа, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве
 
 double Distance(int x1, int y1, int z1, int x2, int y2, int z2){
 double dist = Math.Sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)+(z2-z1)*(z2-z1));
@@ -36,4 +36,18 @@ int B = int.Parse(Console.ReadLine());
 int C = int.Parse(Console.ReadLine());
 double otvet = Distance(X,Y,Z,A,B,C);
 Console.WriteLine(otvet);
+*/
 
+// 3. программа, которая принимает на вход число (N) и выдаёт таблицу кубов чисел
+
+void Cube(int num){
+int ind=1;
+while  (ind<num) {
+    Console.Write($"{Math.Pow(ind,3)}, ");
+    ind++;
+}
+Console.WriteLine(Math.Pow(num,3));
+}
+Console.WriteLine("Введите целое число N");
+int N = int.Parse(Console.ReadLine());
+Cube(N);
