@@ -38,7 +38,7 @@ double otvet = Distance(X,Y,Z,A,B,C);
 Console.WriteLine(otvet);
 */
 
-// 3. программа, которая принимает на вход число (N) и выдаёт таблицу кубов чисел
+/* 3. программа, которая принимает на вход число (N) и выдаёт таблицу кубов чисел
 
 void Cube(int num){
 int ind=1;
@@ -51,3 +51,32 @@ Console.WriteLine(Math.Pow(num,3));
 Console.WriteLine("Введите целое число N");
 int N = int.Parse(Console.ReadLine());
 Cube(N);
+*/
+
+// дополнительное задание №1
+
+void FillArr (int[] array)
+{   int length = array.Length;
+    int index = 0;
+    while (index<length){
+        int elementmassiva = int.Parse(Console.ReadLine());
+        array[index]=elementmassiva;
+        index++;}
+}
+Console.WriteLine("Введите число элементов массива");
+int len = int.Parse(Console.ReadLine());
+int[] massiv = new int [len];
+Console.WriteLine("Введите массив столбцом");
+FillArr(massiv);
+Console.WriteLine("Введите номер позиции на удаление");
+int N = int.Parse(Console.ReadLine());
+
+void PrintArray (int[] arr)
+{   int count = arr.Length;
+    int pos=0;
+    while (pos<count)
+        {if (pos == (N-1)) pos++;
+        else {Console.Write($"{arr[pos]} ");
+        pos++;}}
+}
+PrintArray(massiv);
