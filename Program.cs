@@ -53,7 +53,7 @@ int N = int.Parse(Console.ReadLine());
 Cube(N);
 */
 
-// дополнительное задание №1
+/* дополнительное задание №1
 
 void FillArr (int[] array)
 {   int length = array.Length;
@@ -80,3 +80,50 @@ void PrintArray (int[] arr)
         pos++;}}
 }
 PrintArray(massiv);
+*/
+// дополнительное задание №2
+
+void FillArr (int[] array)
+{   int length = array.Length;
+    int index = 0;
+    while (index<length){
+        int elementmassiva = int.Parse(Console.ReadLine());
+        array[index]=elementmassiva;
+        index++;}
+}
+Console.WriteLine("Введите число элементов массива 1");
+int len1 = int.Parse(Console.ReadLine());
+int[] massiv1 = new int [len1];
+Console.WriteLine("Введите массив 1 столбцом");
+FillArr(massiv1);
+
+Console.WriteLine();
+
+Console.WriteLine("Введите число элементов массива 2");
+int len2 = int.Parse(Console.ReadLine());
+int[] massiv2 = new int [len2];
+Console.WriteLine("Введите массив 2 столбцом");
+FillArr(massiv2);
+
+int len3 = len1 + len2;
+int[] massiv3 = new int [len3];
+int ind = 0;
+    while (ind<len1){
+        massiv3[ind] = massiv1[ind];
+        ind++;}
+int ind2 = len1;  
+    while (ind2<len3){
+        massiv3[ind2] = massiv2[ind2-len1];
+        ind2++;}
+Console.WriteLine();
+Console.WriteLine("массив из двух массивов:");
+
+void PrintArray (int[] arr)
+{   int count = arr.Length;
+    int pos=0;
+    while (pos<count)
+    {Console.WriteLine(arr[pos]);
+     pos++;}
+}
+PrintArray(massiv3);
+
